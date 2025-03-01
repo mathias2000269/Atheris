@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Materiales</title>
+  <audio id="audio" src="Ifeel.mp3"></audio>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      color: rgb(0, 13, 255);
+    }
+    table { 
+      border-collapse: collapse; 
+      width: 100%; 
+      table-layout: auto;
+    }
+
+    td, th { 
+      border: 1px solid black; 
+      padding: 3px 2px 3px 2px; 
+      text-align: center; 
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    /* Estilos para cada tipo de arma */
+    #CuerpoACuerpo {
+      background-color: darkred;
+    }
+
+    #Pistolas {
+      background-color: darkblue;
+    }
+
+    #Revolvers {
+      background-color: darkgray;
+    }
+
+    #Subfusiles {
+      background-color: darkgreen;
+    }
+
+    #Escopetas {
+      background-color: darkorange;
+    }
+
+    #Rifles {
+      background-color: saddlebrown;
+    }
+
+    #Materiales {
+      background-color: gray;
+    }
+
+    /* Estilo para el mensaje de cálculo */
+    #resultado {
+      margin-top: 20px;
+      font-size: 25px;
+      color: rgb(0, 13, 255);
+    }
+    #serp{
+      width: 5vw;
+      height: 5vw;
+      text-align: center;
+      vertical-align: middle;
+    }
+    #calcular {
+      display: block; /* Asegura que se trate como un bloque */
+      margin: auto; /* Centra el botón horizontalmente */
+      padding: 15px 30px; /* Hace el botón más grande con más relleno */
+      font-size: 18px; /* Aumenta el tamaño de la fuente */
+      color: rgb(0, 13, 255);
+      border: none; /* Elimina el borde */
+      border-radius: 8px; /* Bordes redondeados */
+      cursor: pointer; /* Muestra el cursor de puntero */
+      transition: background-color 0.3s ease; /* Añade una transición suave para el hover */
+    }
+    #calcular:hover {
+      background-image: url("sangre.png");
+      color: rgb(0, 238, 255);
+    }
+  </style>
+</head>
+<body>
+  <div class="title-container">
+    <!-- Imágenes a los lados del título -->
+    
+      <h1><img id="serp" src="serp.png" alt="Atheris">Calculadora de Materiales<img id="serp" src="serp.png" alt="Atheris"></h1>
+   
+  </div>
+<!-- Tabla Cuerpo a Cuerpo -->
+<table id="CuerpoACuerpo">
+  <tbody>
+    <tr>
+      <th colspan="10">Cuerpo a Cuerpo</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="NavajaMariposa">Navaja Mariposa</label>
+        <br>
+        <input type="number" id="NavajaMariposa" value="" min="0">
+      </td>
+      <td>
+        <label for="BotellaRota">Botella Rota</label>
+        <br>
+        <input type="number" id="BotellaRota" value="" min="0">
+      </td>
+      <td>
+        <label for="PaloGolf">Palo Golf</label>
+        <br>
+        <input type="number" id="PaloGolf" value="" min="0">
+      </td>
+      <td>
+        <label for="Machete">Machete</label>
+        <br>
+        <input type="number" id="Machete" value="" min="0">
+      </td>
+      <td>
+        <label for="PunoAmericano">Puño Americano</label>
+        <br>
+        <input type="number" id="PunoAmericano" value="" min="0">
+      </td>
+      <td>
+        <label for="Daga">Daga</label>
+        <br>
+        <input type="number" id="Daga" value="" min="0">
+      </td>
+      <td>
+        <label for="HachaBatalla">Hacha Batalla</label>
+        <br>
+        <input type="number" id="HachaBatalla" value="" min="0">
+      </td>
+      <td>
+        <label for="Cuchillo">Cuchillo</label>
+        <br>
+        <input type="number" id="Cuchillo" value="" min="0">
+      </td>
+      <td>
+        <label for="Bate">Bate</label>
+        <br>
+        <input type="number" id="Bate" value="" min="0">
+      <td>
+        <label for="LlaveInglesa">Llave Inglesa</label>
+        <br>
+        <input type="number" id="LlaveInglesa" value="" min="0">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Tabla Pistolas -->
+<table id="Pistolas">
+  <tbody>
+    <tr>
+      <th colspan="9">Pistolas</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="PistolaSNS">Pistola SNS</label>
+        <br>
+        <input type="number" id="PistolaSNS" value="" min="0">
+      </td>
+      <td>
+        <label for="PistolaSNSmk2">Pistola SNS mk2</label>
+        <br>
+        <input type="number" id="PistolaSNSmk2" value="" min="0">
+      </td>
+      <td>
+        <label for="PistolaCeramica">Pistola de cerámica</label>
+        <br>
+        <input type="number" id="PistolaCeramica" value="" min="0">  
+      </td>
+      <td>
+        <label for="PistolaVintage">Pistola vintage</label>
+        <br>
+        <input type="number" id="PistolaVintage" value="" min="0">
+      </td>
+      <td>
+        <label for="PistolaWM29">Pistola WM29</label>
+        <br>
+        <input type="number" id="PistolaWM29" value="" min="0">
+      </td>
+      <td>
+        <label for="PistolaPesada">Pistola Pesada</label>
+        <br>
+        <input type="number" id="PistolaPesada" value="" min="0">
+      </td>
+      <td>
+        <label for="PistolaMk2">Pistola mk2</label>
+        <br>
+        <input type="number" id="PistolaMk2" value="" min="0">
+      </td>
+      <td>
+        <label for="Pistola50">Pistola .50</label>
+        <br>
+        <input type="number" id="Pistola50" value="" min="0">
+      </td>
+            <td>
+        <label for="PistolaAP">Pistola AP</label>
+        <br>
+        <input type="number" id="PistolaAP" value="" min="0">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Tabla Revolvers -->
+<table id="Revolvers">
+  <tbody>
+    <tr>
+      <th colspan="5">Revólveres</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="PistolaMarksman">Pistola Marksman</label>
+        <br>
+        <input type="number" id="PistolaMarksman" value="" min="0">
+      </td>
+      <td>
+        <label for="Revolver">Revólver</label>
+        <br>
+        <input type="number" id="Revolver" value="" min="0">
+      </td>
+      <td>
+        <label for="RevolverMk2">Revólver Mk2</label>
+        <br>
+        <input type="number" id="RevolverMk2" value="" min="0">
+      </td>
+      <td>
+        <label for="RevolverDoble">Revolver Doble Acción</label>
+        <br>
+        <input type="number" id="RevolverDoble" value="" min="0">
+      </td>
+      <td>
+        <label for="RevolverNavy">Revolver Navy</label>
+        <br>
+        <input type="number" id="RevolverNavy" value="" min="0">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Tabla Subfusiles -->
+<table id="Subfusiles">
+  <tbody>
+    <tr>
+      <th colspan="6">Subfusiles</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="MicroSMG">Micro SMG</label>
+        <br>
+        <input type="number" id="MicroSMG" value="" min="0">
+      </td>
+      <td>
+        <label for="MiniSMG">Mini SMG</label>
+        <br>
+        <input type="number" id="MiniSMG" value="" min="0"> 
+      </td>      
+      <td>
+        <label for="Tec9">Tec 9</label>
+        <br>
+        <input type="number" id="Tec9" value="" min="0">
+      </td>
+      <td>
+        <label for="SMGAsalto">SMG Asalto</label>
+        <br>
+        <input type="number" id="SMGAsalto" value="" min="0">
+      </td>      
+      <td>
+        <label for="SMG">SMG</label>
+        <br>
+        <input type="number" id="SMG" value="" min="0">
+      </td>
+      <td>
+        <label for="SMGMk2">SMG Mk2</label>
+        <br>
+        <input type="number" id="SMGMk2" value="" min="0">
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Tabla Escopetas -->
+<table id="Escopetas">
+  <tbody>
+    <tr>
+      <th colspan="7">Escopetas</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="EscopetaDoble">Escopeta Doble Cañón</label>
+        <br>
+        <input type="number" id="EscopetaDoble" value="" min="0">
+      </td>
+      <td>
+        <label for="EscopetaBullpup">Escopeta Bullpup</label>
+        <br>
+        <input type="number" id="EscopetaBullpup" value="" min="0"> 
+      </td>
+      <td>
+        <label for="EscopetaCombate">Escopeta Combate</label>
+        <br>
+        <input type="number" id="EscopetaCombate" value="" min="0">
+      </td>
+      <td>
+        <label for="EscopetaAutomatica">Escopeta Automática</label>
+        <br>
+        <input type="number" id="EscopetaAutomatica" value="" min="0"> 
+      </td>
+      <td>
+        <label for="EscopetaAsalto">Escopeta Asalto</label>
+        <br>
+        <input type="number" id="EscopetaAsalto" value="" min="0">
+      </td>
+      <td>
+        <label for="EscopetaPesada">Escopeta Pesada</label>
+        <br>
+        <input type="number" id="EscopetaPesada" value="" min="0"> 
+      </td>
+      <td>
+        <label for="Mosquete">Mosquete</label>
+        <br>
+        <input type="number" id="Mosquete" value="" min="0">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Tabla Rifles -->
+<table id="Rifles">
+  <tbody>
+    <tr>
+      <th colspan="9">Rifles</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="RifleAsalto">Rifle de Asalto</label>
+        <br>
+        <input type="number" id="RifleAsalto" value="" min="0">
+      </td>
+      <td>
+        <label for="RifleBullpup">Rifle Bullpup</label>
+        <br>
+        <input type="number" id="RifleBullpup" value="" min="0">
+      </td>
+      <td>
+        <label for="RifleAsaltoMk2">Rifle Asalto mk2</label>
+        <br>
+        <input type="number" id="RifleAsaltoMk2" value="" min="0">
+      </td>
+      <td>
+        <label for="RifleCompacto">Rifle Compacto</label>
+        <br>
+        <input type="number" id="RifleCompacto" value="" min="0">
+      </td>
+      <td>
+        <label for="RifleAvanzado">Rifle Avanzado</label>
+        <br>
+        <input type="number" id="RifleAvanzado" value="" min="0">
+      </td>
+      <td>
+        <label for="BullpupRifleMk2">Bullpup Rifle mk2</label>
+        <br>
+        <input type="number" id="BullpupRifleMk2" value="" min="0">
+      </td>
+      <td>
+        <label for="HeavyRifle">Heavy Rifle</label>
+        <br>
+        <input type="number" id="HeavyRifle" value="" min="0">
+      </td>
+      <td>
+        <label for="TacticalRifle">Tactical Rifle</label>
+        <br>
+        <input type="number" id="TacticalRifle" value="" min="0">
+      </td>
+      <td>
+        <label for="MilitaryRifle">Military Rifle</label>
+        <br>
+        <input type="number" id="MilitaryRifle" value="" min="0">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Tabla Materiales -->
+<table id="Materiales">
+  <tbody>
+    <tr>
+      <th colspan="7">Materiales</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="SilenciadorPistola">Silenciador de Pistola</label>
+        <br>
+        <input type="number" id="SilenciadorPistola" value="" min="0">
+      </td>
+      <td>
+        <label for="CargadorAmpliadoPistola">Cargador Ampliado de Pistola</label>
+        <br>
+        <input type="number" id="CargadorAmpliadoPistola" value="" min="0">
+      </td>
+      <td>
+        <label for="Cargador">Cargadores</label>
+        <br>
+        <input type="number" id="Cargador" value="" min="0">
+      </td>
+      <td>
+        <label for="ChalecoReforzado">Chaleco Reforzado</label>
+        <br>
+        <input type="number" id="ChalecoReforzado" value="" min="0">
+      </td>
+      <td>
+        <label for="CargadorSMG">Cargadores SMG</label>
+        <br>
+        <input type="number" id="CargadorSMG" value="" min="0">
+      </td>
+      <td>
+        <label for="CargadorEscopeta">Cargadores Escopeta</label>
+        <br>
+        <input type="number" id="CargadorEscopeta" value="" min="0">
+      </td>
+      <td>
+        <label for="CargadorRifle">Cargadores Rifle</label>
+        <br>
+        <input type="number" id="CargadorRifle" value="" min="0">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- Botón para calcular -->
+<button id="calcular" onclick="calcularMateriales()">Calcular</button>
+
+<!-- Mensaje con los resultados -->
+<div id="resultado"></div>
+
+<script>
+  // Función para calcular los materiales necesarios
+  function calcularMateriales() {
+      // Generar un número aleatorio entre 0 y 1
+      const randomNumber = Math.random();
+      
+      // Comprobar si el número aleatorio es menor que 0.05 (5% de probabilidad)
+      if (randomNumber < 0.05) {
+        // Si es así, reproducir el audio
+        document.getElementById('audio').play();
+      }
+    // Definir los materiales necesarios para cada arma
+    const materiales = {
+      "NavajaMariposa": { aceroInox: 20, hierro: 15, madera: 10, muelle: 1, precio: 0, fibraVidrio: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "BotellaRota": { fibraVidrio: 15, precio: 0, aceroInox: 0, hierro: 0, madera: 0, muelle: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "PaloGolf": { goma: 11, madera: 11, precio: 0, aceroInox: 0, hierro: 0, muelle: 0, fibraVidrio: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "Machete": { aceroInox: 10, madera: 20, precio: 0, hierro: 0, muelle: 0, fibraVidrio: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "PunoAmericano": { aluminio: 15, fibraVidrio: 7, precio: 0, aceroInox: 0, hierro: 0, madera: 0, muelle: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "Daga": { hierro: 20, madera: 10, precio: 0, aceroInox: 0, muelle: 0, fibraVidrio: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "HachaBatalla": { aceroInox: 10, hierro: 15, madera: 20, precio: 0, muelle: 0, fibraVidrio: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "Cuchillo": { aceroInox: 17, madera: 5, precio: 0, hierro: 0, muelle: 0, fibraVidrio: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "Bate": { madera: 11, plastico: 11, precio: 0, aceroInox: 0, hierro: 0, muelle: 0, fibraVidrio: 0, aluminio: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "LlaveInglesa": { hierro: 22, precio: 0, aceroInox: 0, madera: 0, muelle: 0, fibraVidrio: 0, aluminio: 0, plastico: 0, aceiteArmas: 0, cuerpoPistola: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0, tuberias: 0 },
+      "PistolaSNS": { cuerpoPistola: 1, hierro: 5, muelle: 1, plastico: 8, tuberias: 1, precio: 0, aceroInox: 0, madera: 0, aluminio: 0, fibraVidrio: 0, aceiteArmas: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaSNSmk2": { aceiteArmas: 1, cuerpoPistola: 1, hierro: 4, muelle: 1, plastico: 13, tuberias: 1, precio: 0, aceroInox: 0, madera: 0, aluminio: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaCeramica": { aceiteArmas: 2, cuerpoPistola: 1, hierro: 7, muelle: 1, plastico: 13, tuberias: 1, precio: 0, aceroInox: 0, madera: 0, aluminio: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaVintage": { aceiteArmas: 4, cuerpoPistola: 1, hierro: 7, muelle: 2, plastico: 25, tuberias: 2, precio: 0, aceroInox: 0, madera: 0, aluminio: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaWM29": { aceiteArmas: 4, cuerpoPistola: 2, hierro: 9, muelle: 4, plastico: 31, tuberias: 4, precio: 0, aceroInox: 0, madera: 0, aluminio: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaPesada": { aceiteArmas: 4, aceroInox: 51, aluminio: 24, cuerpoPistola: 4, muelle: 4, tuberias: 4, precio: 0, hierro: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaMk2": { aceiteArmas: 4, cuerpoPistola: 1, hierro: 10, muelle: 4, plastico: 25, tuberias: 3, precio: 0, aceroInox: 0, madera: 0, aluminio: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "Pistola50": { aceiteArmas: 5, acero: 51, aluminio: 31, cuerpoPistola: 4, muelle: 5, tuberias: 5, precio: 0, hierro: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaAP": { aceiteArmas: 5, acero: 66, aluminio: 41, cuerpoPistola: 5, muelle: 5, tuberias: 5, precio: 0, hierro: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoRevolver: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "PistolaMarksman": { aceiteArmas: 5, acero: 19, cuerpoRevolver: 1, madera: 39, muelle: 4, tuberias: 5, precio: 0, aceroInox: 0, hierro: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "Revolver": { aceiteArmas: 5, aceroInox: 48, cuerpoRevolver: 1, madera: 25, muelle: 5, tuberias: 5, precio: 0, hierro: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "RevolverMk2": { aceiteArmas: 5, acero: 31, cuerpoRevolver: 4, madera: 51, muelle: 8, tuberias: 8, precio: 0, hierro: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "RevolverDoble": { aceiteArmas: 5, acero: 2, cuerpoRevolver: 1, madera: 41, muelle: 4, tuberias: 4, precio: 0, hierro: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "RevolverNavy": { aceiteArmas: 7, acero: 24, cuerpoRevolver: 1, madera: 49, muelle: 5, tuberias: 5, precio: 0, hierro: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "MicroSMG": { aceiteArmas: 1, acero: 105, cuerpoSMG: 3, hierro: 75, muelle: 1, tuberias: 1, precio: 0, madera: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "MiniSMG": { aceiteArmas: 3, acero: 135, cuerpoSMG: 3, hierro: 75, muelle: 1, tuberias: 1, precio: 0, madera: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "Tec9": { aceiteArmas: 4, aceroInox: 142, cuerpoSMG: 3, hierro: 83, muelle: 2, tuberias: 1, precio: 0, madera: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "SMGAsalto": { aceiteArmas: 6, acero: 157, cuerpoSMG: 5, hierro: 83, muelle: 3, tuberias: 3, precio: 0, madera: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "SMG": { aceiteArmas: 7, acero: 171, cuerpoSMG: 5, hierro: 87, muelle: 3, tuberias: 3, precio: 0, madera: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "SMGMk2": { aceiteArmas: 7, acero: 188, cuerpoSMG: 6, hierro: 103, muelle: 4, tuberias: 4, precio: 0, madera: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "EscopetaDoble": { aceiteArmas: 1, cuerpoEscopeta: 3, hierro: 47, madera: 14, muelle: 1, tuberias: 1, precio: 0, acero: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoRifle: 0 },
+      "EscopetaBullpup": { aceiteArmas: 3, aluminio: 71, cuerpoEscopeta: 4, muelle: 3, plastico: 35, tuberias: 3, precio: 0, acero: 0, hierro: 0, fibraVidrio: 0, madera: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoRifle: 0 },
+      "EscopetaCombate": { aceiteArmas: 4, acero: 63, cuerpoEscopeta: 5, hierro: 99, muelle: 3, tuberias: 4, precio: 0, aluminio: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoRifle: 0 },
+      "EscopetaAutomatica": { aceiteArmas: 4, aluminio: 83, cuerpoEscopeta: 4, muelle: 4, plastico: 41, tuberias: 4, precio: 0, acero: 0, hierro: 0, fibraVidrio: 0, madera: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoRifle: 0 },
+      "EscopetaAsalto": { aceiteArmas: 5, aluminio: 78, cuerpoEscopeta: 5, hierro: 117, muelle: 5, tuberias: 6, precio: 0, acero: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoRifle: 0 },
+      "EscopetaPesada": { aceiteArmas: 5, aluminio: 91, cuerpoEscopeta: 6, hierro: 131, muelle: 3, tuberias: 6, precio: 0, acero: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoRifle: 0 },
+      "Mosquete": { aceiteArmas: 8, cuerpoEscopeta: 8, hierro: 174, madera: 81, muelle: 5, tuberias: 6, precio: 0, acero: 0, plastico: 0, fibraVidrio: 0, aluminio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoRifle: 0 },
+      "RifleAsalto": { aceiteArmas: 5, acero: 248, cuerpoRifle: 5, hierro: 124, muelle: 6, tuberias: 5, precio: 0, aluminio: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "RifleBullpup": { aceiteArmas: 6, acero: 298, aluminio: 133, cuerpoRifle: 5, muelle: 9, tuberias: 6, precio: 0, hierro: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "RifleAsaltoMk2": { aceiteArmas: 6, acero: 298, cuerpoRifle: 5, hierro: 133, muelle: 8, tuberias: 7, precio: 0, aluminio: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "RifleCompacto": { aceiteArmas: 6, acero: 298, aluminio: 133, cuerpoRifle: 5, muelle: 7, tuberias: 8, precio: 0, hierro: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "RifleAvanzado": { aceiteArmas: 7, aluminio: 154, cuerpoRifle: 5, hierro: 343, muelle: 10, tuberias: 10, precio: 0, acero: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "BullpupRifleMk2": { aceiteArmas: 7, acero: 374, aluminio: 172, cuerpoRifle: 6, muelle: 4, tuberias: 4, precio: 0, hierro: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "HeavyRifle": { aceiteArmas: 7, acero: 490, cuerpoRifle: 6, hierro: 274, muelle: 10, tuberias: 9, precio: 0, aluminio: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "TacticalRifle": { aceiteArmas: 9, acero: 458, cuerpoRifle: 6, hierro: 237, muelle: 7, tuberias: 6, precio: 0, aluminio: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "MilitaryRifle": { aceiteArmas: 10, acero: 546, cuerpoRifle: 6, hierro: 327, muelle: 13, tuberias: 12, precio: 0, aluminio: 0, madera: 0, plastico: 0, fibraVidrio: 0, cuerpoPistola: 0, cuerpoSMG: 0, cuerpoEscopeta: 0 },
+      "SilenciadorPistola": { precio: 5000, aceiteArmas: 0, acero: 0, cuerpoRevolver: 0, madera: 0, muelle: 0, tuberias: 0, aceroInox: 0, cuerpoSMG: 0, hierro: 0, aluminio: 0, plastico: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "CargadorAmpliadoPistola": { precio: 8000, aceiteArmas: 0, acero: 0, cuerpoRevolver: 0, madera: 0, muelle: 0, tuberias: 0, aceroInox: 0, cuerpoSMG: 0, hierro: 0, aluminio: 0, plastico: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "Cargador": { precio: 500, aceiteArmas: 0, acero: 0, cuerpoRevolver: 0, madera: 0, muelle: 0, tuberias: 0, aceroInox: 0, cuerpoSMG: 0, hierro: 0, aluminio: 0, plastico: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "ChalecoReforzado": { precio: 5000, aceiteArmas: 0, acero: 0, cuerpoRevolver: 0, madera: 0, muelle: 0, tuberias: 0, aceroInox: 0, cuerpoSMG: 0, hierro: 0, aluminio: 0, plastico: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "CargadorSMG": { precio: 1000, aceiteArmas: 0, acero: 0, cuerpoRevolver: 0, madera: 0, muelle: 0, tuberias: 0, aceroInox: 0, cuerpoSMG: 0, hierro: 0, aluminio: 0, plastico: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "CargadorEscopeta": { precio: 750, aceiteArmas: 0, acero: 0, cuerpoRevolver: 0, madera: 0, muelle: 0, tuberias: 0, aceroInox: 0, cuerpoSMG: 0, hierro: 0, aluminio: 0, plastico: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 },
+      "CargadorRifle": { precio: 1300, aceiteArmas: 0, acero: 0, cuerpoRevolver: 0, madera: 0, muelle: 0, tuberias: 0, aceroInox: 0, cuerpoSMG: 0, hierro: 0, aluminio: 0, plastico: 0, cuerpoEscopeta: 0, cuerpoRifle: 0 }
+    };
+
+    let totalAceroInox = 0;
+    let totalGoma = 0 ;
+    let totalMadera = 0;
+    let totalHierro = 0;
+    let totalAcero = 0;
+    let totalAluminio = 0;
+    let totalFibraVidrio = 0;
+    let totalPlastico = 0;
+    let totalAceiteParaArmas = 0;
+    let totalCuerpoDePistola = 0;
+    let totalCuerpoDeRevolver = 0;
+    let totalCuerpoDeSMG = 0;
+    let totalCuerpoDeEscopeta = 0;
+    let totalCuerpoDeRifle = 0;
+    let totalTuberias = 0;
+    let totalMuelles = 0;
+    let precio = 0;
+    
+    // Calcular los materiales para cada arma seleccionada
+    for (const arma in materiales) {
+      const cantidad = document.getElementById(arma).value;
+      if (cantidad > 0) {
+        totalAceroInox += (materiales[arma].aceroInox || 0) * cantidad;
+        totalGoma += (materiales[arma].goma || 0) * cantidad;
+        totalAcero += (materiales[arma].acero || 0) * cantidad;
+        totalMadera += (materiales[arma].madera || 0) * cantidad;
+        totalHierro += (materiales[arma].hierro || 0) * cantidad;
+        totalAluminio += (materiales[arma].aluminio || 0) * cantidad;
+        totalFibraVidrio += (materiales[arma].fibraVidrio || 0) * cantidad;
+        totalPlastico += (materiales[arma].plastico || 0) * cantidad;
+        totalAceiteParaArmas += (materiales[arma].aceiteArmas || 0) * cantidad;
+        totalCuerpoDePistola += (materiales[arma].cuerpoPistola || 0) * cantidad;
+        totalCuerpoDeRevolver += (materiales[arma].cuerpoRevolver || 0) * cantidad;
+        totalCuerpoDeSMG += (materiales[arma].cuerpoSMG || 0) * cantidad;
+        totalCuerpoDeEscopeta += (materiales[arma].cuerpoEscopeta || 0) * cantidad;
+        totalCuerpoDeRifle += (materiales[arma].cuerpoRifle || 0) * cantidad;
+        totalTuberias += (materiales[arma].tuberias || 0) * cantidad;
+        totalMuelles += (materiales[arma].muelle || 0) * cantidad;
+        precio += (materiales[arma].precio || 0) * cantidad;
+
+      }
+    }
+        // Sumar precios adicionales según la cantidad de cada material especial
+        precio += totalCuerpoDePistola * 10000;
+        precio += totalCuerpoDeRevolver * 10000;
+        precio += totalCuerpoDeEscopeta * 20000;
+        precio += totalCuerpoDeSMG * 40000;
+        precio += totalCuerpoDeRifle * 60000;
+        precio += totalTuberias * 4000;
+        precio += totalAceiteParaArmas * 2000;
+        precio += totalMuelles * 4000;
+
+
+// Mostrar el resultado
+let resultadoHTML = '';
+
+// Verificar cada material y agregarlo como texto seguido
+if (totalAceroInox > 0) resultadoHTML += `Acero Inoxidable: ${totalAceroInox} unidades   `;
+if (totalGoma > 0) resultadoHTML += `Goma: ${totalGoma} unidades   `;
+if (totalAcero > 0) resultadoHTML += `Acero: ${totalAcero} unidades   `;
+if (totalMadera > 0) resultadoHTML += `Madera: ${totalMadera} unidades   `;
+if (totalHierro > 0) resultadoHTML += `Hierro: ${totalHierro} unidades   `;
+if (totalAluminio > 0) resultadoHTML += `Aluminio: ${totalAluminio} unidades   `;
+if (totalFibraVidrio > 0) resultadoHTML += `Fibra de Vidrio: ${totalFibraVidrio} unidades   `;
+if (totalPlastico > 0) resultadoHTML += `Plástico: ${totalPlastico} unidades   `;
+if (totalAceiteParaArmas > 0) resultadoHTML += `Aceite para Armas: ${totalAceiteParaArmas} unidades   `;
+if (totalCuerpoDePistola > 0) resultadoHTML += `Cuerpos de Pistola: ${totalCuerpoDePistola} unidades   `;
+if (totalCuerpoDeRevolver > 0) resultadoHTML += `Cuerpos de Revolver: ${totalCuerpoDeRevolver} unidades   `;
+if (totalCuerpoDeSMG > 0) resultadoHTML += `Cuerpos de SMG: ${totalCuerpoDeSMG} unidades   `;
+if (totalCuerpoDeEscopeta > 0) resultadoHTML += `Cuerpos de Escopeta: ${totalCuerpoDeEscopeta} unidades   `;
+if (totalCuerpoDeRifle > 0) resultadoHTML += `Cuerpos de Rifle: ${totalCuerpoDeRifle} unidades   `;
+if (totalTuberias > 0) resultadoHTML += `Tuberías: ${totalTuberias} unidades   `;
+if (totalMuelles > 0) resultadoHTML += `Muelles: ${totalMuelles} unidades   `;
+if (precio > 0) resultadoHTML += `Precio: ${precio}$   `;
+
+// Asignar el resultado final al contenedor
+document.getElementById("resultado").innerHTML = `<span style="white-space: pre-wrap;">${resultadoHTML}</span>`;
+  }
+</script>
+
+</body>
+</html>
