@@ -1,0 +1,123 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 3em;
+
+  }
+  h1 {
+    text-align: center;
+    color: rgb(0, 13, 255);
+  }
+  .armas { 
+    border-collapse: collapse; 
+    width: 100%; 
+    table-layout: auto;
+  }
+
+  .armas td, .armas th { 
+    border: 1px solid black; 
+    padding: 3px 2px 3px 2px; 
+    text-align: center; 
+  }
+
+  .armas th {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  #calculate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #result-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #result {
+    text-align: center;
+    font-size: 20px;
+    border: 1px inset white;
+    border-collapse:  collapse;
+    color: white;
+  }
+
+  #result th {
+    font-weight: bold;
+    color:rgb(0, 13, 255);
+    font-size: 2em;
+    padding-right: 1em;
+    padding-left: 1em;
+    border: 1px inset white;
+    border-collapse:  collapse;
+  }
+
+  #result td {
+    border: 1px inset white;
+    border-collapse:  collapse;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+  }
+
+  /* Estilos para cada tipo de arma */
+  #CuerpoACuerpo {
+    background-color: darkred;
+  }
+
+  #Pistolas {
+    background-color: darkblue;
+  }
+
+  #Revolvers {
+    background-color: darkgray;
+  }
+
+  #Subfusiles {
+    background-color: darkgreen;
+  }
+
+  #Escopetas {
+    background-color: darkorange;
+  }
+
+  #Rifles {
+    background-color: saddlebrown;
+  }
+
+  #Materiales {
+    background-color: gray;
+  }
+
+  /* Estilo para el mensaje de cálculo */
+  #resultado {
+    margin-top: 20px;
+    font-size: 25px;
+    color: rgb(0, 13, 255);
+  }
+  #serp{
+    width: 5vw;
+    height: 5vw;
+    text-align: center;
+    vertical-align: middle;
+  }
+  #calcular {
+    padding: 15px 30px; /* Hace el botón más grande con más relleno */
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    color: rgb(0, 13, 255);
+    border: none; /* Elimina el borde */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Muestra el cursor de puntero */
+    transition: background-color 0.3s ease; /* Añade una transición suave para el hover */
+    margin: 1em;
+  }
+  #calcular:hover {
+    background-image: url("./static/sangre.png");
+    color: rgb(0, 238, 255);
+  }
